@@ -1,0 +1,26 @@
+﻿
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Click "Show User Information" to check user information and attributes included in the issued ID Token.</p>
+    <p>Click Sign Off to switch users.</p>
+
+    <div class="form-group">
+        <a asp-controller="Home" asp-action="UserInfo">
+            <input type="button" value="Show User Information" class="btn btn-primary" />
+        </a>
+    </div>
+    <div class="form-group">
+        <a asp-controller="Account" asp-action="Logout">
+            <input type="button" value="Sign Off" class="btn btn-primary" />
+        </a>
+    </div>
+}
+else
+{
+    <p>You are not currently authenticated. Click Sign On to get started.</p>
+    <div class="form-group">
+        <a asp-controller="Account" asp-action="Login">
+            <input type="button" value="Sign On" class="btn btn-primary" />
+        </a>
+    </div>
+}

@@ -1,0 +1,67 @@
+﻿@using System.IdentityModel.Tokens.Jwt
+@model UserInfoViewModel
+
+<h1>Currently logged in user</h1>
+
+<br />
+<br />
+<p>Basic user info retrieved from claims</p>
+<table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th style="width: 20%;">Field</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Given Name</td>
+        <td>@Model.GivenName</td>
+    </tr>
+    <tr>
+        <td>Family Name</td>
+        <td>@Model.FamilyName</td>
+    </tr>
+    <tr>
+        <td>Preferred Username</td>
+        <td>@Model.PreferredUsername</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <td>Updated At</td>
+        <td>@Model.UpdatedAt.ToShortDateString() @Model.UpdatedAt.ToShortTimeString()</td>
+    </tr>
+    </tbody>
+</table>
+
+<br />
+<br />
+<p>Auth data</p>
+<table class="table table-striped" style="table-layout: fixed;">
+    <thead class="thead-dark">
+        <tr>
+            <th style="width: 20%;">Field</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Access token</td>
+            <td style="word-wrap: break-word; white-space: pre-wrap;">@ViewData["accessToken"]</td>
+        </tr>
+        <tr>
+            <td>Token Id</td>
+            <td style="word-wrap: break-word; white-space: pre-wrap;">@ViewData["tokenId"]</td>
+        </tr>
+        @foreach (var claim in (ViewData["securityToken"] as JwtSecurityToken).Claims)
+        {
+            <tr>
+                <td>@claim.Type</td>
+                <td>@claim.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
