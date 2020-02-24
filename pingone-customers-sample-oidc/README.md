@@ -54,9 +54,11 @@ Also, make sure that it is enabled and access grants (`profile address email ope
 - `RedirectPath`: *Required*. The request path within the application's base path to which the PingOne will redirect the user's browser after authorization has been granted by the user. The middleware will process this request when it arrives. *REDIRECT URLS* values corresponds to this data.
 - `PostSignOffRedirectUrl`: *Optional*. The URL to which the browser is redirected after a logout has been performed. *SIGNOFF URLS* values corresponds to this data. 
 - `Scopes`:  Array of OIDC or PingOne custom scopes, which you want to request authorization for. [PingOne platform scopes](https://apidocs.pingidentity.com/pingone/customer/v1/api/auth/p1-a_AccessServices/#PingOne-platform-scopes-and-endpoint-operations) are configured under "Access" tab in PingOne Admin Console
-4. Open console/terminal and navigate to a folder with OIDC Sample project: `cd .\pingone-customers-sample-oidc\PingOne.AspNetCore.Samples.Oidc`
-5. Start an application by `dotnet run` command.
-6. Open a browser and navigate to `https://localhost:44377`.
+4. Be sure to add a REDIRECT URI in the application settings within the PingOne Admin Console. For the default settings, you'll want to add `https://localhost:44377/callback`.
+5. Change the TOKEN ENDPOINT AUTHENTICATION METHOD to `Client Secret Post` in the application settings within the PingOne Admin Console.
+6. Open console/terminal and navigate to a folder with OIDC Sample project: `cd .\pingone-customers-sample-oidc\PingOne.AspNetCore.Samples.Oidc`
+7. Start an application by `dotnet run` command.
+8. Open a browser and navigate to `https://localhost:44377`.
 
 ## Packages Used
 - [Microsoft.AspNetCore.Authentication.OpenIdConnect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
