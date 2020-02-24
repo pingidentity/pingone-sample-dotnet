@@ -56,7 +56,7 @@ Also, make sure that it is enabled and access grants (`profile address email ope
 - `Scopes`:  Array of OIDC or PingOne custom scopes, which you want to request authorization for. [PingOne platform scopes](https://apidocs.pingidentity.com/pingone/customer/v1/api/auth/p1-a_AccessServices/#PingOne-platform-scopes-and-endpoint-operations) are configured under "Access" tab in PingOne Admin Console
 4. Open console/terminal and navigate to a folder with OIDC Sample project: `cd .\pingone-customers-sample-oidc\PingOne.AspNetCore.Samples.Oidc`
 5. Start an application by `dotnet run` command.
-6. Open a browser and navigate to `http://localhost:44377`.
+6. Open a browser and navigate to `https://localhost:44377`.
 
 ## Packages Used
 - [Microsoft.AspNetCore.Authentication.OpenIdConnect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)

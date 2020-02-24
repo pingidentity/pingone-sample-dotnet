@@ -44,7 +44,7 @@ creating one can be found [here](https://apidocs.pingidentity.com/pingone/custom
 - `Secret`: *Required*. Your application's client secret known only to the application and the authorization server.
 4. Open console/terminal and go to a folder with Registration Sample project: `cd .\pingone-customers-sample-oidc\PingOne.AspNetCore.Samples.Registration`
 5. Start an application by `dotnet run` command.
-6. Open a browser and navigate to `http://localhost:44377`. 
+6. Open a browser and navigate to `https://localhost:44377`. 
 
 ## Packages Used
 - [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client)
