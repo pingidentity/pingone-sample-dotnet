@@ -5,7 +5,7 @@ This sample demonstrates how to:
  - **update user password by application**
  - **recover a forgotten password**
  
- using PingOne for Customers (Ping14C) [Management API](https://apidocs.pingidentity.com/pingone/customer/v1/api/man) service.
+Use the PingOne [Management API](https://apidocs.pingidentity.com/pingone/platform/v1/api/#management-apis) service.
 It uses `client_credentials` grant type to obtain an access token, thereby it bypasses the authentication flow steps and calls the `/{environmentId}/as/token` endpoint directly to acquire the token.
 
 # Content 
@@ -15,17 +15,16 @@ It uses `client_credentials` grant type to obtain an access token, thereby it by
 - [Developer Notes](#developer-notes)
 
 # Prerequisites
-- PingOne for Customers Account.  
-If you don’t have an existing one, please register for a Free Trial Account here: https://developer.pingidentity.com
+- PingOne Account.  
+If you don’t have an existing one, please register for a Free Trial Account here: https://www.pingidentity.com/en/trials.html
 - A Worker application instance.  
-Instructions for 
-creating one can be found [here](https://apidocs.pingidentity.com/pingone/customer/v1/api/guide/p1_gettingStarted/#Configure-an-application-connection).
+Instructions for creating one can be found [here](https://apidocs.pingidentity.com/pingone/platform/v1/api/#getting-started).
 - [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) installed.
 
 # Setup & Running
-1. Clone this source code: `https://github.com/pingidentity/pingone-customers-sample-dotnet.git`
+1. Clone this source code: `https://github.com/pingidentity/pingone-sample-dotnet.git`
 2. Grab the following application configuration information from the admin console: `EnvironmentId`, `ClientId`, `ClientSecret`.
-3. Paste the values into respecitve placeholders in [appsettings.json](./PingOne.AspNetCore.Samples.Registration/appsettings.json) under `PingOne.Management` section
+3. Paste the values into the respective placeholders in [appsettings.json](./PingOne.AspNetCore.Samples.Registration/appsettings.json) under `PingOne.Management` section
 ```json
 "PingOne": {
     "Management": {
