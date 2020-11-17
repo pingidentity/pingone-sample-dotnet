@@ -4,7 +4,7 @@ This sample shows how to invoke OpenID Connect/OAuth 2 protocol to:
  - **authenticate an existing user**
  - **show user information** 
 
-using PingOne for Customers (Ping14C) [Authentication](https://apidocs.pingidentity.com/pingone/customer/v1/api/auth/p1-a_Authorize/) service.
+Use the PingOne [Authentication](https://apidocs.pingidentity.com/pingone/platform/v1/api/#get-authorize-authorization_code) service.
 The default OAuth 2.0 flow illustrated here is an authorization `code` response type. But for a demonstration purposes you can test `token` and `id_token` types with corresponding [appsettings.json](./PingOne.AspNetCore.Samples.Oidc/appsettings.json) file adjustment. 
 
 # Content 
@@ -15,16 +15,16 @@ The default OAuth 2.0 flow illustrated here is an authorization `code` response 
 
 # Prerequisites
 
-- PingOne for Customers Account.  
+- PingOne Account.  
 If you don’t have an existing one, please register it.
 - An OpenID Connect Application.  
-Instructions for creating one can be found [here](https://apidocs.pingidentity.com/pingone/customer/v1/api/guide/p1_gettingStarted/#Configure-an-application-connection). 
+Instructions for creating one can be found [here](https://apidocs.pingidentity.com/pingone/platform/v1/api/#getting-started). 
 Also, make sure that it is enabled and access grants (`profile address email openid`) by scopes are properly set.
 - At least one user in the same environment as the application (not assigned)
 - [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) installed
 
 # Setup & Running
-1. Clone this source code: `https://github.com/pingidentity/pingone-customers-sample-dotnet.git`
+1. Clone this source code: `https://github.com/pingidentity/pingone-sample-dotnet.git`
 2. Grab the following application configuration information from the admin console: `EnvironmentId`, `ClientId`, `ClientSecret`.
 3. Replace their placeholders in [appsettings.json](./PingOne.AspNetCore.Samples.Oidc/appsettings.json) with respective values in `PingOne.Authentication` section
 ```json
@@ -53,7 +53,7 @@ Also, make sure that it is enabled and access grants (`profile address email ope
 - `ResponseType`: *Required*. The type of credentials returned in the response.
 - `RedirectPath`: *Required*. The request path within the application's base path to which the PingOne will redirect the user's browser after authorization has been granted by the user. The middleware will process this request when it arrives. *REDIRECT URLS* values corresponds to this data.
 - `PostSignOffRedirectUrl`: *Optional*. The URL to which the browser is redirected after a logout has been performed. *SIGNOFF URLS* values corresponds to this data. 
-- `Scopes`:  Array of OIDC or PingOne custom scopes, which you want to request authorization for. [PingOne platform scopes](https://apidocs.pingidentity.com/pingone/customer/v1/api/auth/p1-a_AccessServices/#PingOne-platform-scopes-and-endpoint-operations) are configured under "Access" tab in PingOne Admin Console
+- `Scopes`:  Array of OIDC or PingOne custom scopes, which you want to request authorization for. [PingOne platform scopes](https://apidocs.pingidentity.com/pingone/platform/v1/api/#access-services-through-scopes-and-roles) are configured under "Access" tab in PingOne Admin Console
 4. Be sure to add a REDIRECT URI in the application settings within the PingOne Admin Console. For the default settings, you'll want to add `https://localhost:44377/callback`.
 5. Change the TOKEN ENDPOINT AUTHENTICATION METHOD to `Client Secret Post` in the application settings within the PingOne Admin Console.
 6. Open console/terminal and navigate to a folder with OIDC Sample project: `cd .\pingone-customers-sample-oidc\PingOne.AspNetCore.Samples.Oidc`
