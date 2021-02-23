@@ -79,7 +79,7 @@ namespace PingOne.Core.Management.Services
                     passwordPattern.Append(
                         Regex.Replace(
                             pattern,
-                            "[\\{\\}\\(\\)\\[\\]\\.\\+\\*\\?\\^\\$\\\\|-]",
+                            "[\\/\\{\\}\\(\\)\\[\\]\\.\\+\\*\\?\\^\\$\\\\|-]",
                             "\\${0}"));
                     passwordPattern.Append("]){");
                     passwordPattern.Append(minValue);
@@ -88,13 +88,16 @@ namespace PingOne.Core.Management.Services
 
                 passwordPattern.Append(")");
 
-                passwordPattern.Append("(?!.*(.)\\1{");
-                passwordPattern.Append(defaultPolicy.MaxRepeatedCharacters);
-                passwordPattern.Append(",}).{");
-                passwordPattern.Append($"{defaultPolicy.Length.Min},{defaultPolicy.Length.Max}");
+                if (defaultPolicy.MaxRepeatedCharacters > 0)
+                {
+                    passwordPattern.Append("(?!.*(.)\\1{");
+                    passwordPattern.Append(defaultPolicy.MaxRepeatedCharacters);
+                    passwordPattern.Append(",})");
+                }
+                passwordPattern.Append($".{{{defaultPolicy.Length.Min},{defaultPolicy.Length.Max}}}");
             }
 
-            passwordPattern.Append("}$");
+            passwordPattern.Append("$");
 
             return passwordPattern.ToString();
         }
