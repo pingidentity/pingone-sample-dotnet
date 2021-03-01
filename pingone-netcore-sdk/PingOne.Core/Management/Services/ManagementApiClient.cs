@@ -94,7 +94,9 @@ namespace PingOne.Core.Management.Services
                     passwordPattern.Append(defaultPolicy.MaxRepeatedCharacters);
                     passwordPattern.Append(",})");
                 }
-                passwordPattern.Append($".{{{defaultPolicy.Length.Min},{defaultPolicy.Length.Max}}}");
+                passwordPattern.Append(".{");
+                passwordPattern.Append($"{defaultPolicy.Length.Min},{defaultPolicy.Length.Max}");
+                passwordPattern.Append("}");
             }
 
             passwordPattern.Append("$");
