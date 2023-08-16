@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PingOne.AspNetCore.Samples.Oidc": {
+    "PingOne.AspNetCore.Samples.Registration": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:44377",

@@ -17,9 +17,9 @@ It uses `client_credentials` grant type to obtain an access token, thereby it by
 # Prerequisites
 - PingOne Account.  
 If you don’t have an existing one, please register for a Free Trial Account here: https://www.pingidentity.com/en/trials.html
-- A Worker application instance.  
+- A Worker application (Token Endpoint Authentication Method=Client Secret Post).  
 Instructions for creating one can be found [here](https://apidocs.pingidentity.com/pingone/platform/v1/api/#getting-started).
-- [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) installed.
+- [.NET SDK 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed.
 
 # Setup & Running
 1. Clone this source code: `https://github.com/pingidentity/pingone-sample-dotnet.git`

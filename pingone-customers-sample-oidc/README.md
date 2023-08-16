@@ -17,11 +17,11 @@ The default OAuth 2.0 flow illustrated here is an authorization `code` response 
 
 - PingOne Account.  
 If you don’t have an existing one, please register it.
-- An OpenID Connect Application.  
+- A Native OpenID Connect Application.  
 Instructions for creating one can be found [here](https://apidocs.pingidentity.com/pingone/platform/v1/api/#getting-started). 
 Also, make sure that it is enabled and access grants (`profile address email openid`) by scopes are properly set.
 - At least one user in the same environment as the application (not assigned)
-- [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) installed
+- [.NET SDK 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed
 
 # Setup & Running
 1. Clone this source code: `https://github.com/pingidentity/pingone-sample-dotnet.git`
